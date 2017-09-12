@@ -8,8 +8,8 @@
     <title>A-Saturday-Night</title>
     <meta name="description" content="A WebVR dancing experience using A-Frame by Mozilla VR.">
     <link rel="stylesheet" href="css/main.css">
-    <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.5.12/dist/clipboard.min.js"></script>
-    <script src="vendor/aframe.min.js"></script>
+    <script src="vendor/aframe-master.min.js"></script>
+    <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/v1.5.12/dist/clipboard.min.js"></script>  
     <script src="vendor/aframe-motion-capture-components.js"></script>
     <script src="vendor/gif.js"></script>
     <script src="vendor/download.js"></script>
@@ -90,9 +90,9 @@
         <img src="assets/avatar3/avatar3spec.jpg">
         <img src="assets/avatar4/avatar4.jpg">
 
-        <a-asset-item id="set-obj" src="assets/room/set.gltf"></a-asset-item>
+        <a-asset-item id="set-obj" src="assets/room/set.obj"></a-asset-item>
         <img src="assets/room/set.jpg">
-        <a-asset-item id="floor-obj" src="assets/room/floor.gltf"></a-asset-item>
+        <a-asset-item id="floor-obj" src="assets/room/floor.obj"></a-asset-item>
         <audio id="avatar1ogg" src="assets/sounds/avatar1.ogg" duration="15"></audio>
         <audio id="avatar2ogg" src="assets/sounds/avatar2.ogg" duration="19"></audio>
         <audio id="avatar3ogg" src="assets/sounds/avatar3.ogg" duration="17"></audio>
@@ -106,26 +106,26 @@
 
         <img id="floor-img" src="assets/room/flooron.png">
         <img id="flooroff-mtl" src="assets/room/flooroff.png">
-        <a-asset-item id="spotlight-obj" src="assets/room/spotlight.gltf"></a-asset-item>
+        <a-asset-item id="spotlight-obj" src="assets/room/spotlight.obj"></a-asset-item>
         <img id="spotlight-img" src="assets/room/spotlight.png">
         <img id="star-img" src="assets/room/star.png">
-        <a-asset-item id="tv-obj" src="assets/room/tv.gltf"></a-asset-item>
+        <a-asset-item id="tv-obj" src="assets/room/tv.obj"></a-asset-item>
 
-        <a-asset-item id="avatar1-head-obj" src="assets/avatar1/avatar1-head.gltf"></a-asset-item>
-        <a-asset-item id="avatar1-hand-right-obj" src="assets/avatar1/avatar1-hand-right.gltf"></a-asset-item>
-        <a-asset-item id="avatar1-hand-left-obj" src="assets/avatar1/avatar1-hand-left.gltf"></a-asset-item>
+        <a-asset-item id="avatar1-head-obj" src="assets/avatar1/avatar1-head_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar1-hand-right-obj" src="assets/avatar1/avatar1-hand-right_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar1-hand-left-obj" src="assets/avatar1/avatar1-hand-left_gltf2.gltf"></a-asset-item>
 
-        <a-asset-item id="avatar2-head-obj" src="assets/avatar2/avatar2-head.gltf"></a-asset-item>
-        <a-asset-item id="avatar2-hand-right-obj" src="assets/avatar2/avatar2-hand-right.gltf"></a-asset-item>
-        <a-asset-item id="avatar2-hand-left-obj" src="assets/avatar2/avatar2-hand-left.gltf"></a-asset-item>
+        <a-asset-item id="avatar2-head-obj" src="assets/avatar2/avatar2-head_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar2-hand-right-obj" src="assets/avatar2/avatar2-hand-right_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar2-hand-left-obj" src="assets/avatar2/avatar2-hand-left_gltf2.gltf"></a-asset-item>
 
-        <a-asset-item id="avatar3-head-obj" src="assets/avatar3/avatar3-head.gltf"></a-asset-item>
-        <a-asset-item id="avatar3-hand-right-obj" src="assets/avatar3/avatar3-hand-right.gltf"></a-asset-item>
-        <a-asset-item id="avatar3-hand-left-obj" src="assets/avatar3/avatar3-hand-left.gltf"></a-asset-item>
+        <a-asset-item id="avatar3-head-obj" src="assets/avatar3/avatar3-head_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar3-hand-right-obj" src="assets/avatar3/avatar3-hand-right_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar3-hand-left-obj" src="assets/avatar3/avatar3-hand-left_gltf2.gltf"></a-asset-item>
 
-        <a-asset-item id="avatar4-head-obj" src="assets/avatar4/avatar4-head.gltf"></a-asset-item>
-        <a-asset-item id="avatar4-hand-right-obj" src="assets/avatar4/avatar4-hand-right.gltf"></a-asset-item>
-        <a-asset-item id="avatar4-hand-left-obj" src="assets/avatar4/avatar4-hand-left.gltf"></a-asset-item>
+        <a-asset-item id="avatar4-head-obj" src="assets/avatar4/avatar4-head_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar4-hand-right-obj" src="assets/avatar4/avatar4-hand-right_gltf2.gltf"></a-asset-item>
+        <a-asset-item id="avatar4-hand-left-obj" src="assets/avatar4/avatar4-hand-left_gltf2.gltf"></a-asset-item>
       </a-assets>
       <a-entity id="cameraRig" rotation="0 0 0">
         <a-entity id="avatarHead"
@@ -157,29 +157,29 @@
       <a-entity id="light3" light="color:#a431f0;type:point;" position="-2.5 2.38 -2.5"></a-entity>
       <a-entity id="light4" light="color:#f130cf;intensity:0.66;type:point;" position="3 2.38 -0.61"></a-entity>
       <!-- spotlights -->
-      <a-entity id="spot1" proxy-event="event: dancing" gltf-model="#spotlight-obj" spotlight="color:#ab7121" position="-3.14 2.38 2.7" rotation="44 -38 0" scale="0 0 0">
+      <a-entity id="spot1" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#ab7121" position="-3.14 2.38 2.7" rotation="44 -38 0" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="spot2" proxy-event="event: dancing" gltf-model="#spotlight-obj" spotlight="color:#205eff" position="2.7 2.29 2.7" rotation="50 53 0" scale="0 0 0">
+      <a-entity id="spot2" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#205eff" position="2.7 2.29 2.7" rotation="50 53 0" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="spot3" proxy-event="event: dancing" gltf-model="#spotlight-obj" spotlight="color:#a431f0" position="-3 2.38 -2.5" rotation="-52 60 -13" scale="0 0 0">
+      <a-entity id="spot3" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#a431f0" position="-3 2.38 -2.5" rotation="-52 60 -13" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="spot4" proxy-event="event: dancing" gltf-model="#spotlight-obj" spotlight="color:#f130cf" position="3 2.38 -1.19" rotation="-50 -60 0" scale="0 0 0">
+      <a-entity id="spot4" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#f130cf" position="3 2.38 -1.19" rotation="-50 -60 0" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
 
 
       <!-- room, floor and TV sets -->
-      <a-entity id="room" gltf-model="#set-obj" proxy-event="event: dancing" roomcolor="#999" >
+      <a-entity id="room" obj-model="#set-obj" proxy-event="event: dancing" roomcolor="#999" >
         <a-entity sound="loop: true" position="0 2 -1"></a-entity>
         <a-animation attribute="roomcolor" begin="dancing" to="#FFF" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="floor" gltf-model="#floor-obj" material="shader:flat;src:#floor-img" discofloor position="0 -0.009 0" rotation="0 -90 0"></a-entity>
+      <a-entity id="floor" obj-model="#floor-obj" material="shader:flat;src:#floor-img" discofloor position="0 -0.009 0" rotation="0 -90 0"></a-entity>
       <a-image src="#flooroff-mtl" material="repeat: 8 8" rotation="-90 0 0" scale="1.99 1.99 1" position="0 -0.01 0"></a-image>
-      <a-entity id="tv1" gltf-model="#tv-obj" position="-1.66 2.15 2.18" rotation="0 -33.3 0"></a-entity>
-      <a-entity id="tv2" gltf-model="#tv-obj" position="0.87 2.15 -2.44" rotation="0 151.8 0"></a-entity>
+      <a-entity id="tv1" obj-model="#tv-obj" position="-1.66 2.15 2.18" rotation="0 -33.3 0"></a-entity>
+      <a-entity id="tv2" obj-model="#tv-obj" position="0.87 2.15 -2.44" rotation="0 151.8 0"></a-entity>
       <!-- Avatar selection -->
       <a-entity id="avatarSelection" scale="0.75 0.75 0.75" position="0 1.6 -2" visible="false">
         <a-entity id="selectionText" text="font: assets/asaturdaynight.fnt; align: center; opacity: 1; width: 6.22; value:Select your avatar; color:#fffdb3;" position="0 -0.5 0"></a-entity>
