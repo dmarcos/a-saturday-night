@@ -81,7 +81,7 @@
 
       <a-assets timeout="8000">
 
-        <img src="assets/room/set.jpg">
+        <img id="set-img" src="assets/room/set.jpg">
         <img src="assets/room/tv.png">
         <img src="assets/avatar1/avatar1.jpg">
         <img src="assets/avatar2/avatar2.jpg">
@@ -91,7 +91,6 @@
         <img src="assets/avatar4/avatar4.jpg">
 
         <a-asset-item id="set-obj" src="assets/room/set.obj"></a-asset-item>
-        <img src="assets/room/set.jpg">
         <a-asset-item id="floor-obj" src="assets/room/floor.obj"></a-asset-item>
         <audio id="avatar1ogg" src="assets/sounds/avatar1.ogg" duration="15"></audio>
         <audio id="avatar2ogg" src="assets/sounds/avatar2.ogg" duration="19"></audio>
@@ -157,24 +156,23 @@
       <a-entity id="light3" light="color:#a431f0;type:point;" position="-2.5 2.38 -2.5"></a-entity>
       <a-entity id="light4" light="color:#f130cf;intensity:0.66;type:point;" position="3 2.38 -0.61"></a-entity>
       <!-- spotlights -->
-      <a-entity id="spot1" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#ab7121" position="-3.14 2.38 2.7" rotation="44 -38 0" scale="0 0 0">
+      <a-entity id="spot1" proxy-event="event: dancing" obj-model="obj: #spotlight-obj" spotlight="color:#ab7121" position="-3.14 2.38 2.7" rotation="44 -38 0" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="spot2" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#205eff" position="2.7 2.29 2.7" rotation="50 53 0" scale="0 0 0">
+      <a-entity id="spot2" proxy-event="event: dancing" obj-model="obj: #spotlight-obj" spotlight="color:#205eff" position="2.7 2.29 2.7" rotation="50 53 0" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="spot3" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#a431f0" position="-3 2.38 -2.5" rotation="-52 60 -13" scale="0 0 0">
+      <a-entity id="spot3" proxy-event="event: dancing" obj-model="obj: #spotlight-obj" spotlight="color:#a431f0" position="-3 2.38 -2.5" rotation="-52 60 -13" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
-      <a-entity id="spot4" proxy-event="event: dancing" obj-model="#spotlight-obj" spotlight="color:#f130cf" position="3 2.38 -1.19" rotation="-50 -60 0" scale="0 0 0">
+      <a-entity id="spot4" proxy-event="event: dancing" obj-model="obj: #spotlight-obj" spotlight="color:#f130cf" position="3 2.38 -1.19" rotation="-50 -60 0" scale="0 0 0">
         <a-animation attribute="scale" begin="dancing" to="1 1 1" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
 
 
       <!-- room, floor and TV sets -->
-      <a-entity id="room" obj-model="#set-obj" proxy-event="event: dancing" roomcolor="#999" >
+      <a-entity id="room" obj-model="obj: #set-obj" material="shader:flat;src:#set-img" proxy-event="event: dancing">
         <a-entity sound="loop: true" position="0 2 -1"></a-entity>
-        <a-animation attribute="roomcolor" begin="dancing" to="#FFF" dur="1000" easing="ease-out-elastic"></a-animation>
       </a-entity>
       <a-entity id="floor" obj-model="#floor-obj" material="shader:flat;src:#floor-img" discofloor position="0 -0.009 0" rotation="0 -90 0"></a-entity>
       <a-image src="#flooroff-mtl" material="repeat: 8 8" rotation="-90 0 0" scale="1.99 1.99 1" position="0 -0.01 0"></a-image>
